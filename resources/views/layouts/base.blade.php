@@ -374,7 +374,7 @@
 			<div class="coppy-right-box">
 				<div class="container">
 					<div class="coppy-right-item item-left">
-						<p class="coppy-right-text">Copyright © 2024. All rights reserved</p>
+						<p class="coppy-right-text">Copyright © 2024. All rights reserved main</p>
 					</div>
 					<div class="coppy-right-item item-right">
 						<div class="wrap-nav horizontal-nav">
