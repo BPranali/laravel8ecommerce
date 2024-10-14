@@ -7,9 +7,9 @@
           <p class="card-description"> Basic form elements </p>
           <form class="forms-sample" wire:submit.prevent="updateProduct">
             <div class="form-group">
-                <label for="exampleInputName1">Name</label>
+                <label for="exampleInputName1">Name  <span style="color: red">*</span></label>
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" wire:model="name" wire:keyup="generateslug">
-                @error('name') <span class="error">{{ $message }}</span> @enderror
+                @error('name') <span class="error" style="color: red">{{ $message }}</span> @enderror
               </div>
             <div class="form-group">
                 <label for="exampleInputName1">Slug</label>
@@ -17,14 +17,14 @@
             
               </div>
             <div class="form-group">
-                <label for="exampleInputName1">Price</label>
+                <label for="exampleInputName1">Price  <span style="color: red">*</span></label>
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Price" wire:model="price">
-                @error('price') <span class="error">{{ $message }}</span> @enderror
+                @error('price') <span class="error" style="color: red">{{ $message }}</span> @enderror
               </div>
             <div class="form-group">
-                <label for="exampleTextarea1">Description</label>
+                <label for="exampleTextarea1">Description <span style="color: red">*</span></label>
                 <textarea class="form-control" id="exampleTextarea1" rows="4" wire:model="description"></textarea>
-                @error('description') <span class="error">{{ $message }}</span> @enderror
+                @error('description') <span class="error" style="color: red">{{ $message }}</span> @enderror
               </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <label for="input-submit" class="form-label"> Images </label>
@@ -33,12 +33,11 @@
                    <img src="{{ $newimage->temporaryUrl() }}" width="120" />
                @else
                    <img src="{{ asset('/images/product') }}/{{ $image }}" width="120" alt="">
-               @endif 
-               
+               @endif
             </div>
         
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-dark">Cancel</button>
+            <button type="submit" class="btn btn-primary mr-2 mt-2">Submit</button>
+            
         </form>
         </div>
       </div>
@@ -50,26 +49,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">Select 2</h4>
-          <div class="form-group">
-            <label>Single select box using select 2</label>
-            <select class="js-example-basic-single" style="width:100%">
-              <option value="AL">Alabama</option>
-              <option value="WY">Wyoming</option>
-              <option value="AM">America</option>
-              <option value="CA">Canada</option>
-              <option value="RU">Russia</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Multiple select using select 2</label>
-            <select class="js-example-basic-multiple" multiple="multiple" style="width:100%">
-              <option value="AL">Alabama</option>
-              <option value="WY">Wyoming</option>
-              <option value="AM">America</option>
-              <option value="CA">Canada</option>
-              <option value="RU">Russia</option>
-            </select>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -78,20 +58,7 @@
         <div class="card-body">
           <h4 class="card-title">Typeahead</h4>
           <p class="card-description"> A simple suggestion engine </p>
-          <div class="form-group row">
-            <div class="col">
-              <label>Basic</label>
-              <div id="the-basics">
-                <input class="typeahead" type="text" placeholder="States of USA">
-              </div>
-            </div>
-            <div class="col">
-              <label>Bloodhound</label>
-              <div id="bloodhound">
-                <input class="typeahead" type="text" placeholder="States of USA">
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
