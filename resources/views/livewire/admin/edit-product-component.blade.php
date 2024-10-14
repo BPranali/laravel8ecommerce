@@ -9,19 +9,23 @@
             <div class="form-group">
                 <label for="exampleInputName1">Name</label>
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" wire:model="name" wire:keyup="generateslug">
-            </div>
+                @error('name') <span class="error">{{ $message }}</span> @enderror
+              </div>
             <div class="form-group">
                 <label for="exampleInputName1">Slug</label>
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="slug" wire:model="slug">
-            </div>
+            
+              </div>
             <div class="form-group">
                 <label for="exampleInputName1">Price</label>
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Price" wire:model="price">
-            </div>
+                @error('price') <span class="error">{{ $message }}</span> @enderror
+              </div>
             <div class="form-group">
                 <label for="exampleTextarea1">Description</label>
                 <textarea class="form-control" id="exampleTextarea1" rows="4" wire:model="description"></textarea>
-            </div>
+                @error('description') <span class="error">{{ $message }}</span> @enderror
+              </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <label for="input-submit" class="form-label"> Images </label>
                 <input class="form-control" type="file" wire:model="newimage" id="input-file">
@@ -29,7 +33,8 @@
                    <img src="{{ $newimage->temporaryUrl() }}" width="120" />
                @else
                    <img src="{{ asset('/images/product') }}/{{ $image }}" width="120" alt="">
-               @endif
+               @endif 
+               
             </div>
         
             <button type="submit" class="btn btn-primary mr-2">Submit</button>

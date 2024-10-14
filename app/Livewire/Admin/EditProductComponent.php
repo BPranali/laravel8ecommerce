@@ -43,6 +43,12 @@ class EditProductComponent extends Component
 
     public function updateProduct()
     {
+        $this->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'image' => 'required|image|max:1024', // Ensures the image is valid and limits size to 1MB
+        ]);
         $product = Product::find($this->product_id);
         $product->name = $this->name;
         $product->slug = $this->slug;

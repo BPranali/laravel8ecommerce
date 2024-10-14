@@ -9,6 +9,7 @@
                       <div class="form-group">
                         <label for="exampleInputName1">Name</label>
                         <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" wire:model="name" wire:keyup="generateslug">
+                        @error('name') <span class="error">{{ $message }}</span> @enderror
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Slug</label>
@@ -17,10 +18,12 @@
                       <div class="form-group">
                         <label for="exampleInputName1">Price</label>
                         <input type="text" class="form-control" id="exampleInputName1" placeholder="Price" wire:model="price">
+                        @error('price') <span class="error">{{ $message }}</span> @enderror
                       </div>
                       <div class="form-group">
                         <label for="exampleTextarea1">Description</label>
                         <textarea class="form-control" id="exampleTextarea1" rows="4" wire:model="description"></textarea>
+                        @error('description') <span class="error">{{ $message }}</span> @enderror
                       </div>
                       <div class="form-group">
                         <label>File upload</label>
